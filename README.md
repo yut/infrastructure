@@ -10,7 +10,7 @@ If you get stuck, delete the terraform.tfstate file, and manually destroy the re
 
 ## Enable logging to STDOUT
 
-    export TF_LOG=1
+    export TF_LOG=ERROR  (TRACE, DEBUG, INFO, WARN, ERROR)
 
 ## Initialize local directory
 
@@ -31,3 +31,10 @@ If you get stuck, delete the terraform.tfstate file, and manually destroy the re
     terraform plan -destroy -out=terraform.tfplan -var "do_token=${OCEAN_TOKEN}" -var "pvt_key=$HOME/.ssh/id_rsa" -var "ocean_ssh_key=${OCEAN_SSH_KEY}"
     terraform apply terraform.tfplan
 
+## Terraform / DigitalOcean Provider Documentation
+
+[Documentation Link](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs)
+
+## Call DigitalOcean API using cURL
+
+    curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer $OCEAN_TOKEN" "https://api.digitalocean.com/v2/droplets?page=1&per_page=1"
