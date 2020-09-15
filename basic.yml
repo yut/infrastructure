@@ -1,0 +1,14 @@
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: test connection
+      ping:
+
+    - name: Install ntp package
+      apt:
+        name: ntp
+
+    - name: Remove ntp package
+      apt:
+        name: ntp
+        state: absent

@@ -33,7 +33,7 @@ resource "digitalocean_firewall" "web" {
   inbound_rule {
     protocol           = "tcp"
     port_range         = "22"
-    source_addresses   = ["192.168.1.0/24", "2002:1:2::/48"]
+    source_addresses   = ["192.168.1.0/24", "2002:1:2::/48", "47.187.105.119"]
   }
 
   inbound_rule {

@@ -38,3 +38,9 @@ If you get stuck, delete the terraform.tfstate file, and manually destroy the re
 ## Call DigitalOcean API using cURL
 
     curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer $OCEAN_TOKEN" "https://api.digitalocean.com/v2/droplets?page=1&per_page=1"
+
+## Ansible Examples
+
+    ansible -i ./inventory -u root all -m ping
+    ansible -i ./inventory -u root all -a "/bin/echo hello"
+    ansible-playbook -i ./inventory basic.yml -f 10
