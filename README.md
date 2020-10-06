@@ -9,8 +9,9 @@ If you get stuck, delete the terraform.tfstate file, and manually destroy the re
     export OCEAN_SSH_KEY="greg..."
 
 ## Enable logging to STDOUT
+### Other log levels include: TRACE, DEBUG, INFO, WARN, ERROR
 
-    export TF_LOG=ERROR  (TRACE, DEBUG, INFO, WARN, ERROR)
+    export TF_LOG=ERROR
 
 ## Initialize local directory
 

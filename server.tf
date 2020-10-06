@@ -25,6 +25,14 @@ resource "digitalocean_droplet" "app1" {
   }
 }
 
+
+resource "digitalocean_certificate" "cert" {
+  name    = "climatemojo-cert"
+  type    = "lets_encrypt"
+  domains = ["climatemojo.com"]
+}
+
+
 resource "digitalocean_firewall" "web" {
   name = "only-22-80-and-443"
 
